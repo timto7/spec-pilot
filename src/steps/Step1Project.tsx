@@ -34,7 +34,7 @@ export default function Step1Project() {
   const packageManagers: PackageManager[] = ['bun', 'npm', 'yarn', 'pnpm']
 
   return (
-    <div className="max-w-2xl">
+    <div>
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-1" style={{ color: 'var(--color-text)' }}>
           Define your project

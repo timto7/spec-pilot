@@ -129,7 +129,7 @@ function WizardShell() {
                     ? 'rgba(99,102,241,0.12)'
                     : 'transparent',
                   color: isActive
-                    ? 'var(--color-accent)'
+                    ? '#ffffff'
                     : isDone
                       ? 'var(--color-text)'
                       : 'var(--color-text-muted)',
@@ -155,6 +155,28 @@ function WizardShell() {
                     style={{ backgroundColor: 'var(--color-accent)' }}
                   />
                 )}
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-semibold shrink-0"
+                  style={{
+                    color: isActive
+                      ? '#ffffff'
+                      : isDone
+                        ? 'var(--color-text)'
+                        : 'var(--color-text-muted)',
+                    backgroundColor: isActive
+                      ? 'rgba(99,102,241,0.18)'
+                      : isDone
+                        ? 'rgba(255,255,255,0.08)'
+                        : 'rgba(255,255,255,0.04)',
+                    border: `1px solid ${
+                      isActive
+                        ? 'rgba(99,102,241,0.35)'
+                        : 'rgba(255,255,255,0.08)'
+                    }`,
+                  }}
+                >
+                  {step.number}
+                </span>
                 <div className="relative shrink-0">
                   <Icon size={15} />
                   {isDone && (
@@ -166,33 +188,9 @@ function WizardShell() {
                     </div>
                   )}
                 </div>
-                <div className="flex items-center gap-2 min-w-0">
-                  <span
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-semibold shrink-0"
-                    style={{
-                      color: isActive
-                        ? 'var(--color-accent)'
-                        : isDone
-                          ? 'var(--color-text)'
-                          : 'var(--color-text-muted)',
-                      backgroundColor: isActive
-                        ? 'rgba(99,102,241,0.18)'
-                        : isDone
-                          ? 'rgba(255,255,255,0.08)'
-                          : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${
-                        isActive
-                          ? 'rgba(99,102,241,0.35)'
-                          : 'rgba(255,255,255,0.08)'
-                      }`,
-                    }}
-                  >
-                    {step.number}
-                  </span>
-                  <span className="text-sm font-medium truncate">
-                    {step.name}
-                  </span>
-                </div>
+                <span className="text-sm font-medium truncate">
+                  {step.name}
+                </span>
               </button>
             );
           })}
@@ -245,7 +243,9 @@ function WizardShell() {
         </header>
 
         {/* Step content */}
-        <main className="flex-1 overflow-y-auto px-8 py-6">{renderStep()}</main>
+        <main style={{ flex: 1, overflowY: 'auto', padding: '1.5rem max(2rem, calc(50% - 390px))' }}>
+          {renderStep()}
+        </main>
 
         {/* Navigation */}
         <footer

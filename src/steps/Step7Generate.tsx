@@ -149,7 +149,7 @@ export default function Step7Generate() {
   const labelStyle = { color: 'var(--color-text-muted)' }
 
   return (
-    <div className="max-w-2xl space-y-5">
+    <div className="space-y-5">
       <div>
         <h2 className="text-xl font-semibold mb-1" style={{ color: 'var(--color-text)' }}>
           Generate

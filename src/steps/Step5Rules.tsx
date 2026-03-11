@@ -69,7 +69,7 @@ export default function Step5Rules() {
   const selected = rules.find(r => r.id === selectedId) ?? rules[0] ?? null
 
   return (
-    <div className="max-w-3xl">
+    <div>
       <div className="mb-6">
         <h2 className="text-xl font-semibold mb-1" style={{ color: 'var(--color-text)' }}>
           Domain Rules Files
