@@ -26,6 +26,7 @@ export default function Step1Project() {
     border: '1px solid var(--color-border)',
     color: 'var(--color-text)',
   }
+  const selectClass = `${inputClass} app-select`
   const labelClass = "block text-xs font-medium mb-1.5"
   const labelStyle = { color: 'var(--color-text-muted)' }
 
@@ -78,7 +79,7 @@ export default function Step1Project() {
             />
             <button
               onClick={handleBrowse}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium flex-shrink-0 transition-all duration-150"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium shrink-0 transition-all duration-150"
               style={{
                 backgroundColor: 'var(--color-sidebar)',
                 border: '1px solid var(--color-border)',
@@ -107,7 +108,7 @@ export default function Step1Project() {
             <select
               value={project.framework}
               onChange={e => update('framework', e.target.value)}
-              className={inputClass}
+              className={selectClass}
               style={{ ...inputStyle, cursor: 'pointer' }}
             >
               {frameworks.map(f => (
@@ -122,7 +123,7 @@ export default function Step1Project() {
             <select
               value={project.packageManager}
               onChange={e => update('packageManager', e.target.value as PackageManager)}
-              className={inputClass}
+              className={selectClass}
               style={{ ...inputStyle, cursor: 'pointer' }}
             >
               {packageManagers.map(pm => (
@@ -141,7 +142,7 @@ export default function Step1Project() {
             <select
               value={project.language}
               onChange={e => update('language', e.target.value as 'TypeScript' | 'JavaScript')}
-              className={inputClass}
+              className={selectClass}
               style={{ ...inputStyle, cursor: 'pointer' }}
             >
               <option value="TypeScript" style={{ backgroundColor: 'var(--color-card)' }}>TypeScript</option>

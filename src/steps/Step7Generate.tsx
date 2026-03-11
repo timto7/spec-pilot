@@ -145,6 +145,7 @@ export default function Step7Generate() {
     border: '1px solid var(--color-border)',
     color: 'var(--color-text)',
   }
+  const selectClass = `${inputClass} app-select`
   const labelStyle = { color: 'var(--color-text-muted)' }
 
   return (
@@ -183,7 +184,7 @@ export default function Step7Generate() {
               <button
                 onClick={handleFetchTeams}
                 disabled={!linear.apiKey || validatingKey}
-                className="px-3 py-2 rounded-lg text-xs font-medium transition-colors flex-shrink-0"
+                className="px-3 py-2 rounded-lg text-xs font-medium transition-colors shrink-0"
                 style={{
                   backgroundColor: linear.apiKey && !validatingKey ? 'var(--color-accent)' : 'var(--color-border)',
                   color: 'white',
@@ -209,7 +210,7 @@ export default function Step7Generate() {
               <select
                 value={linear.teamId}
                 onChange={e => updateLinear('teamId', e.target.value)}
-                className={inputClass}
+                className={selectClass}
                 style={{ ...inputStyle, cursor: 'pointer' }}
               >
                 <option value="" style={{ backgroundColor: 'var(--color-card)' }}>Select a team...</option>
@@ -300,7 +301,7 @@ export default function Step7Generate() {
               color: 'var(--color-warning)',
             }}
           >
-            <AlertCircle size={13} className="flex-shrink-0 mt-0.5" />
+            <AlertCircle size={13} className="shrink-0 mt-0.5" />
             <span>
               {incompleteSpecs.map(s => s.featureName || 'Untitled').join(', ')} {incompleteSpecs.length === 1 ? 'is' : 'are'} incomplete.
               You can still generate, but review the checklist for best results.

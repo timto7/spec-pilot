@@ -96,7 +96,7 @@ function WizardShell() {
       >
         {/* Logo */}
         <div
-          className="flex items-center gap-2 px-5 min-h-[77px] border-b"
+          className="flex items-center gap-2 px-5 h-[76px] border-b"
           style={{ borderColor: 'var(--color-border)' }}
         >
           <div
@@ -203,7 +203,7 @@ function WizardShell() {
       <div className="flex flex-col flex-1 min-w-0 h-full">
         {/* Step header */}
         <header
-          className="flex items-center justify-between px-8 py-4 min-h-[77px] border-b shrink-0"
+          className="flex items-center justify-between px-8 py-4 h-[76px] border-b shrink-0"
           style={{ borderColor: 'var(--color-border)' }}
         >
           <div>

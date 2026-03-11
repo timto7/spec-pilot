@@ -7,7 +7,7 @@ function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void 
   return (
     <button
       onClick={onToggle}
-      className="relative inline-flex items-center rounded-full transition-colors duration-200 flex-shrink-0"
+      className="relative inline-flex items-center rounded-full transition-colors duration-200 shrink-0"
       style={{
         width: '40px',
         height: '22px',
@@ -90,6 +90,7 @@ export default function Step4Hooks() {
     border: '1px solid var(--color-border)',
     color: 'var(--color-text)',
   }
+  const selectClass = `${inputClass} app-select`
   const labelStyle = { color: 'var(--color-text-muted)' }
 
   return (
@@ -204,7 +205,7 @@ export default function Step4Hooks() {
                 value={newHook.name}
                 onChange={e => setNewHook(h => ({ ...h, name: e.target.value }))}
                 placeholder="My custom hook"
-                className={inputClass}
+                className={selectClass}
                 style={inputStyle}
               />
             </div>
